@@ -1,0 +1,12 @@
+<launch>
+
+	<node pkg="jetson_detection_ros" name="detectnet_custom" type="detectnet_custom.py" output="screen">
+		<rosparam file="$(find jetson_detection_ros)/config/config_detectnet.yaml" command="load" />
+	</node>
+	<node pkg="coordinates_point_cloud" name="get_coordinate_object" type="get_coordinate_object.py" output="screen">
+		<rosparam file="$(find jetson_detection_ros)/config/config_detectnet.yaml" command="load" />
+	</node>
+	<node pkg="tf_broadcaster" name="tf_broadcast" type="tf_broadcast.py">
+		<rosparam file="$(find jetson_detection_ros)/config/config_detectnet.yaml" command="load" />
+	</node>
+</launch>

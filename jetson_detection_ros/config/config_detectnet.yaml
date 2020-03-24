@@ -1,0 +1,23 @@
+#Config file for Jetson_detection_ros
+
+#Camera topic to Subscribe
+camera_topic: "/camera/rgb/image_raw"
+depth_topic: "/camera/depth/points"
+#Network
+#Other networks : "ssd-mobilenet-v1", "ssd-mobilenet-v2", "ssd-inception-v2", "coco-dog", "coco-bottle", "coco-chair", "coco-airplane", "pednet", "multiped", "facenet"
+network: "ssd-mobilenet-v2"
+
+#Threshold for detection
+threshold : 0.7
+
+#overlay on output image
+overlay: "box,labels,conf"
+
+#COCO labels
+class_names: ['bg','person','bicycle','car','motorcycle','airplane','bus','train','truck','boat','trafficlight','firehydrant','streetsign','stopsign','parkingmeter','bench','bird','cat','dog','horse','sheep','cow','elephant','bear','zebra','giraffe','hat','backpack','umbrella','shoe','eyeglasses','handbag','tie','suitcase','frisbee','skis','snowboard','sportsball','kite','baseballbat','baseballglove','skateboard','surfboard','tennisracket','bottle','plate','wineglass','cup','fork','knife','spoon','bowl','banana','apple','sandwich','orange','broccoli','carrot','hotdog','pizza','donut','cake','chair','couch','pottedplant','bed','mirror','diningtable','window','desk','toilet','door','tv','laptop','mouse','remote','keyboard','cellphone','microwave','oven','toaster','sink','refrigerator','blender','book','clock','vase','scissors','teddybear','hairdrier','toothbrush']
+
+boundingbox_sub: "/detection/bounding_box"
+
+result_topic: "/detection/center_depth"
+
+tf_frame_topic: "/camera_rgb_optical_frame"

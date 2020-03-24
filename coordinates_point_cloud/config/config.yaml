@@ -1,0 +1,5 @@
+#Config file for calculating 3D position of Object in bounding box
+
+depth_topic: "/camera/depth/points"
+boundingbox_sub: "/detection/bounding_box"
+result_topic: "/detection/center_depth"
